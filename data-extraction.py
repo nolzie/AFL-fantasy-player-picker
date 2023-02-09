@@ -2,8 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
-from bs4 import BeautifulStoneSoup
-from typing import static 
+from bs4 import BeautifulSoup
 
 
 class WebScraper:
@@ -32,6 +31,9 @@ url = 'https://dtlive.com.au/afl/dataview.php'
 
 
 scraper = WebScraper()
-page_content = WebScraper.download_page(url)
+page_content = scraper.download_page(url=url)
 
-soup = BeautifulSoup(content, 'html.parser')
+soup = BeautifulSoup(page_content, 'html.parser')
+print(soup)
+
+soup.builder
