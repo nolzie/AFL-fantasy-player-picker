@@ -26,3 +26,12 @@ class WebScraper:
         self.response = requests.get(url)
         self.response.raise_for_status()
         return self.response.text
+
+
+url = 'https://dtlive.com.au/afl/dataview.php'
+
+
+scraper = WebScraper()
+page_content = WebScraper.download_page(url)
+
+soup = BeautifulSoup(content, 'html.parser')
